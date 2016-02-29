@@ -24,17 +24,18 @@ import android.util.Log;
 
 import org.apache.cordova.*;
 
-public class TourTrakAndroidPlugin extends CordovaActivity 
+public class TourTrakAndroidPlugin extends CordovaActivity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        Log.d("FUCK1");
         super.onCreate(savedInstanceState);
         super.init();
-  
+
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
+        startService(new Intent(this, TestService.class));
         //super.loadUrl("file:///android_asset/www/index.html")
     }
 }
-
